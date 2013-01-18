@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/you_said' do
-  params[:str] == 'BYE' ? session[:BYE] += 1 : session[:BYE] = 0
+  params[:sonny_says] == 'BYE' ? session[:BYE] += 1 : session[:BYE] = 0
   session[:BYE] == 3 ? erb( :bye) : erb( :you_said)
 end
 
