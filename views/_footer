@@ -1,1 +1,0 @@
-<h6>copyright 2009 - <%= Time.now.year %></h6>
