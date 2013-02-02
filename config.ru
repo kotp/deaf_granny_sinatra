@@ -1,3 +1,2 @@
-require 'sinatra'
-require './lib/granny'
+require './deaf_granny'
 run Sinatra::Application
