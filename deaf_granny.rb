@@ -9,11 +9,25 @@ get '/' do
 end
 
 post '/you_said' do
-  params[:sonny_says] == 'BYE' ? session[:BYE] += 1 : session[:BYE] = 0
-  session[:BYE] == 3 ? erb( :bye) : erb( :you_said)
+  sonny_said_bye
+  goodbye_or_continue
 end
 
 get '/bye' do
-  session[:BYE] = 0
+  session[:BYE] = 0 && session[:granny] = nil
   erb :bye
+end
+
+
+def sonny_said_bye
+  params[:sonny_says] == 'BYE' and increment_bye or reset_bye
+end
+def goodbye_or_continue
+ session[:BYE] == 3 and erb( :bye) or erb( :you_said)
+end
+def increment_bye
+  session[:BYE] += 1 
+end
+def reset_bye
+  session[:BYE] = 0
 end

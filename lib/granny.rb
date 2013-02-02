@@ -1,6 +1,6 @@
 class Granny
-  def initialize
-    @range = *(1930..1950)
+  def initialize(name = 'Ginny', years_remembered = (1930..1950))
+    @range = *years_remembered
   end
 
   def replies_to something
