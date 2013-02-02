@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Deaf Granny</title>
+    <link rel='stylesheet' type='text/css' href='deaf_granny.css' />
   </head>
   <body>
-  <h1>Deaf Granny</h1>
-    <%= yield %>
+
+    <h1>Deaf Granny</h1>
+    <div>
+      <p> <%= yield %> </p>
+    </div>
+
+    <div class="footer">
+      <p> <%= "Copyright 2009 - #{Time.now.year}" %> </p>
+    </div>
+
   </body>
-  <footer>
-    <% # Get this into CSS rather than this cludgy work around %>
-    <% 10.times do %>
-      <%= "</br>" %>
-    <% end %>
-    <%= "Copyright 2009 - #{Time.now.year}" %>
-  </footer>
+
 </html>
 
