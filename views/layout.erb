@@ -7,5 +7,12 @@
   <h1>Deaf Granny</h1>
     <%= yield %>
   </body>
+  <footer>
+    <% # Get this into CSS rather than this cludgy work around %>
+    <% 10.times do %>
+      <%= "</br>" %>
+    <% end %>
+    <%= "Copyright 2009 - #{Time.now.year}" %>
+  </footer>
 </html>
 
