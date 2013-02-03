@@ -1,4 +1,3 @@
-# A sample Gemfile
 source "http://rubygems.org"
 
 group :production do
@@ -11,14 +10,17 @@ group :production do
       sqlite3
       sqlite3-ruby
       tilt
-      unicorn }.each {|package| gem package }
+      unicorn 
+  }.each {|package| gem package }
 end
 
 group :development, :test do
- gem 'rb-inotify', '~> 0.8.8'
-  %w{ 
-      guard
+  gem 'rb-inotify', '~> 0.8.8'
+  %w{ guard
       minitest-reporters
-      guard-minitest}.each {|package| gem package}
+      guard-minitest
+      capybara
+      capybara_minitest_spec
+  }.each {|package| gem package}
 end
 
