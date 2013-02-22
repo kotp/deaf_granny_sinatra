@@ -2,6 +2,7 @@ $:.unshift('./lib', './spec')
 require 'minitest/autorun'
 require 'minitest/reporters' 
 require 'capybara'
+require 'capybara/dsl'
 require 'capybara_minitest_spec'
 require './deaf_granny'
 require 'rack/test'
