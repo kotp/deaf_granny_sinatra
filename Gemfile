@@ -2,15 +2,15 @@ source "http://rubygems.org"
 
 group :production do
   %w{ sinatra
-      rack 
-      rack-protection 
+      rack
+      rack-protection
       rake
       rdoc
       rdoc-data
       sqlite3
-      sqlite3-ruby
+      sqlite3
       tilt
-      unicorn 
+      unicorn
   }.each {|package| gem package }
 end
 
