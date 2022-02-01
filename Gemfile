@@ -6,21 +6,19 @@ group :production do
       rack-protection
       rake
       rdoc
-      rdoc-data
-      sqlite3
       sqlite3
       tilt
       unicorn
-  }.each {|package| gem package }
+  }.each { |package| gem package }
 end
 
 group :development, :test do
-  gem 'rb-inotify', '~> 0.8.8'
+  gem 'rb-inotify' #, '~> 0.8.8'
   %w{ guard
-      minitest-reporters
       guard-minitest
+      minitest-reporters
       capybara
       capybara_minitest_spec
-  }.each {|package| gem package}
+  }.each { |package| gem package }
 end
 
