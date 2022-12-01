@@ -47,7 +47,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mustermann (1.1.1)
+    mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     nenv (0.3.0)
     nokogiri (1.13.6-x86_64-linux)
@@ -63,7 +63,7 @@ GEM
     public_suffix (4.0.6)
     racc (1.6.0)
     rack (2.2.3)
-    rack-protection (2.1.0)
+    rack-protection (2.2.3)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -78,10 +78,10 @@ GEM
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     shellany (0.0.1)
-    sinatra (2.1.0)
-      mustermann (~> 1.0)
+    sinatra (2.2.3)
+      mustermann (~> 2.0)
       rack (~> 2.2)
-      rack-protection (= 2.1.0)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
     sqlite3 (1.4.2)
     stringio (3.0.1)
