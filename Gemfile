@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+ruby '>= 3.1'
+
 group :production do
   %w{ sinatra
       rack
