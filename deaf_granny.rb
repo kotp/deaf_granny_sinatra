@@ -26,7 +26,7 @@ def goodbye_or_continue
  session[:BYE] == 3 and erb( :bye) or erb( :you_said)
 end
 def increment_bye
-  session[:BYE] += 1 
+  session[:BYE] and session[:BYE] += 1 
 end
 def reset_bye
   session[:BYE] = 0
