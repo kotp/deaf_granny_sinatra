@@ -20,7 +20,6 @@ group :development, :test do
       guard-minitest
       minitest-reporters
       capybara
-      capybara_minitest_spec
       webrick
   }.each { |package| gem package }
 end

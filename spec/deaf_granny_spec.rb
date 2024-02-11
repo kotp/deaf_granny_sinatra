@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 require 'granny'
 
 describe 'Granny' do
@@ -23,41 +23,45 @@ end
 
 describe 'Integration Testing' do
   include Capybara::DSL
+  Capybara.app = Sinatra::Application.new
+
   before :each do
     visit '/'
   end
+
   it 'must have title of Deaf Granny' do
-    _(page).must_have_content 'Deaf'
+    page.has_content? 'Deaf'
   end
+
   it 'must return appropriate page for silence' do
       fill_in 'sonny_says', :with => ''
       click_button 'response'
-      _(page).must_have_content "Don't sit there"
+      page.has_content? "Don't sit there"
   end
 
   it 'must return appropriate page for BYE' do
       fill_in 'sonny_says', :with => 'BYE'
       click_button 'response'
-      _(page).must_have_content "Don't sit there"
+      page.has_content? "Don't sit there"
   end
 
   it 'must return appropriate page for HELLO' do
       fill_in 'sonny_says', :with => 'HELLO'
       click_button 'response'
-      _(page).must_have_content "NOT SINCE"
+      page.has_content? "NOT SINCE"
   end
 
-  it 'must have stop message for three BYE consecutively' do
+  it 'must finally say BYE to sonny after he tries to say BYE to her the third time' do
       fill_in 'sonny_says', :with => 'BYE'
       click_button 'response'
-      _(page).must_have_content "sit there"
+      page.has_content? "sit there"
       find_link('Click Here').click
       fill_in 'sonny_says', :with => 'BYE'
       click_button 'response'
-      _(page).must_have_content "sit there"
+      page.has_content? "sit there"
       find_link('Click Here').click
       fill_in 'sonny_says', :with => 'BYE'
       click_button 'response'
-      _(page).must_have_content "BYE SONNY"
+      page.has_content? "BYE SONNY"
   end
 end
